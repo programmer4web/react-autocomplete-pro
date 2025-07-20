@@ -1,0 +1,75 @@
+{
+  "name": "react-autocomplete-pro",
+  "version": "1.0.0",
+  "description": "Advanced React autocomplete component with fuzzy search, rich results, multi-select, and TypeScript support. Features intelligent suggestions, category grouping, and async data loading.",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "style": "dist/index.esm.css",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "yarn build:css && node node_modules/rollup/dist/bin/rollup -c rollup.config.js",
+    "build:css": "node -e \"require('fs').copyFileSync('node_modules/tailwindcss/index.css', 'src/output.css')\"",
+    "dev": "node node_modules/rollup/dist/bin/rollup -c -w",
+    "test": "jest",
+    "prepublishOnly": "npm run build"
+  },
+  "peerDependencies": {
+    "@emotion/react": ">=11.0.0",
+    "@emotion/styled": ">=11.0.0",
+    "@mui/icons-material": ">=5.0.0",
+    "@mui/material": ">=5.0.0",
+    "react": ">=16.8.0",
+    "react-dom": ">=16.8.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.22.5",
+    "@babel/preset-env": "^7.22.5",
+    "@babel/preset-react": "^7.22.5",
+    "@rollup/plugin-babel": "^6.0.3",
+    "@rollup/plugin-commonjs": "^25.0.2",
+    "@rollup/plugin-json": "^6.1.0",
+    "@rollup/plugin-node-resolve": "^15.1.0",
+    "@rollup/plugin-terser": "^0.4.3",
+    "@rollup/plugin-typescript": "^11.1.1",
+    "@storybook/addon-essentials": "^8.6.14",
+    "@storybook/addon-interactions": "^8.6.14",
+    "@storybook/addon-links": "^9.0.16",
+    "@storybook/builder-vite": "^9.0.16",
+    "@storybook/react": "^9.0.16",
+    "@storybook/testing-library": "^0.2.2",
+    "@types/jest": "^29.5.2",
+    "@types/react": "^18.2.14",
+    "@types/react-dom": "^18.2.6",
+    "autoprefixer": "^10.4.21",
+    "jest": "^29.5.0",
+    "postcss": "^8.5.6",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "rollup": "^3.25.3",
+    "rollup-plugin-import-css": "^4.0.1",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "tailwindcss": "^4.1.11",
+    "tslib": "^2.6.0",
+    "typescript": "^5.1.6"
+  },
+  "keywords": [
+    "react"
+  ],
+  "author": "Andrei-Constantin Alexandru",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/programmer4web/react-autocomplete-pro.git"
+  },
+  "bugs": {
+    "url": "https://github.com/programmer4web/react-autocomplete-pro/issues"
+  },
+  "homepage": "https://github.com/programmer4web/react-autocomplete-pro#readme",
+  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e",
+  "dependencies": {
+    "rollup-plugin-copy": "^3.5.0"
+  }
+}
