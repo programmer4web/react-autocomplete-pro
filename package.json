@@ -11,18 +11,15 @@
   ],
   "scripts": {
     "build": "yarn build:css && node node_modules/rollup/dist/bin/rollup -c rollup.config.js",
-    "build:css": "node -e \"require('fs').copyFileSync('node_modules/tailwindcss/index.css', 'src/output.css')\"",
+    "build:css": "echo 'CSS file already exists'",
     "dev": "node node_modules/rollup/dist/bin/rollup -c -w",
     "test": "jest",
     "prepublishOnly": "npm run build"
   },
   "peerDependencies": {
-    "@emotion/react": ">=11.0.0",
-    "@emotion/styled": ">=11.0.0",
-    "@mui/icons-material": ">=5.0.0",
-    "@mui/material": ">=5.0.0",
     "react": ">=16.8.0",
-    "react-dom": ">=16.8.0"
+    "react-dom": ">=16.8.0",
+    "lucide-react": ">=0.263.0"
   },
   "devDependencies": {
     "@babel/core": "^7.22.5",
@@ -34,12 +31,6 @@
     "@rollup/plugin-node-resolve": "^15.1.0",
     "@rollup/plugin-terser": "^0.4.3",
     "@rollup/plugin-typescript": "^11.1.1",
-    "@storybook/addon-essentials": "^8.6.14",
-    "@storybook/addon-interactions": "^8.6.14",
-    "@storybook/addon-links": "^9.0.16",
-    "@storybook/builder-vite": "^9.0.16",
-    "@storybook/react": "^9.0.16",
-    "@storybook/testing-library": "^0.2.2",
     "@types/jest": "^29.5.2",
     "@types/react": "^18.2.14",
     "@types/react-dom": "^18.2.6",
@@ -51,6 +42,7 @@
     "rollup": "^3.25.3",
     "rollup-plugin-import-css": "^4.0.1",
     "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-copy": "^3.5.0",
     "tailwindcss": "^4.1.11",
     "tslib": "^2.6.0",
     "typescript": "^5.1.6"
@@ -68,8 +60,5 @@
     "url": "https://github.com/programmer4web/react-autocomplete-pro/issues"
   },
   "homepage": "https://github.com/programmer4web/react-autocomplete-pro#readme",
-  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e",
-  "dependencies": {
-    "rollup-plugin-copy": "^3.5.0"
-  }
+  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
 }
