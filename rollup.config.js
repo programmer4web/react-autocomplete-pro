@@ -56,12 +56,12 @@ module.exports = [
       typescript({
       }),
       
-      // Transpile with Babel
+      // Transpile with Babel (only for JS files, TypeScript handles TS files)
       babel({
         babelHelpers: 'bundled',
         exclude: 'node_modules/**',
         presets: ['@babel/preset-env', '@babel/preset-react'],
-        extensions: ['.js', '.jsx', '.ts', '.tsx'],
+        extensions: ['.js', '.jsx'],
       }),
       
       // Minify bundle
@@ -81,7 +81,7 @@ module.exports = [
   
   // Special build for the demo
   {
-    input: 'src/TimelineDemo.jsx',
+    input: 'src/AutocompleteProDemo.tsx',
     output: [
       {
         file: 'dist/demo.js',
@@ -102,11 +102,17 @@ module.exports = [
         extensions: ['.js', '.jsx', '.ts', '.tsx']
       }),
       commonjs(),
+      
+      // Compile TypeScript files
+      typescript({
+      }),
+      
+      // Transpile with Babel (only for JS files, TypeScript handles TS files)
       babel({
         babelHelpers: 'bundled',
         exclude: 'node_modules/**',
         presets: ['@babel/preset-env', '@babel/preset-react'],
-        extensions: ['.js', '.jsx', '.ts', '.tsx'],
+        extensions: ['.js', '.jsx'],
       }),
       terser(),
     ],
