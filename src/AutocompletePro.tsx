@@ -272,7 +272,7 @@ const AdvancedAutocomplete: React.FC<AdvancedAutocompleteProps> = ({
   // Initial load
   useEffect(() => {
     performSearch('');
-  }, [performSearch]);
+  }, []);
   
   // Group options by category
   const groupedOptions = useMemo(() => {
