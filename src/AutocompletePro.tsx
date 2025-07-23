@@ -5,7 +5,7 @@ import { AutocompleteOption, SearchConfig, AdvancedAutocompleteProps } from './t
 // Default search configuration
 const DEFAULT_SEARCH_CONFIG: SearchConfig = {
   algorithm: 'hybrid',
-  fuzzyThreshold: 0.6,
+  fuzzyThreshold: 0.5,
   minQueryLength: 1,
   maxResults: 10,
   debounceMs: 300,
@@ -20,12 +20,30 @@ const fuzzyMatch = (query: string, text: string, threshold: number): boolean => 
   
   if (textLower.includes(queryLower)) return true;
   
-  // Simple Levenshtein distance-based fuzzy matching
-  const distance = levenshteinDistance(queryLower, textLower);
-  const maxLength = Math.max(queryLower.length, textLower.length);
-  const similarity = 1 - distance / maxLength;
+  // Split text into words and check fuzzy match against each word
+  const words = textLower.split(/\s+/);
   
-  return similarity >= threshold;
+  for (const word of words) {
+    // Check if query fuzzy matches this word
+    const distance = levenshteinDistance(queryLower, word);
+    const maxLength = Math.max(queryLower.length, word.length);
+    const similarity = 1 - distance / maxLength;
+    
+    if (similarity >= threshold) return true;
+    
+    // Also check substrings for partial matches
+    if (word.length >= queryLower.length) {
+      for (let i = 0; i <= word.length - queryLower.length; i++) {
+        const substring = word.substring(i, i + queryLower.length);
+        const substringDistance = levenshteinDistance(queryLower, substring);
+        const substringSimilarity = 1 - substringDistance / queryLower.length;
+        
+        if (substringSimilarity >= threshold) return true;
+      }
+    }
+  }
+  
+  return false;
 };
 
 const levenshteinDistance = (a: string, b: string): number => {
