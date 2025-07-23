@@ -406,9 +406,9 @@ const AdvancedAutocomplete: React.FC<AdvancedAutocompleteProps> = ({
               {isLoading ? 'Searching...' : 'No results found'}
             </div>
           ) : (
-            <ul ref={listRef} className="overflow-y-auto max-h-96">
+            <div ref={listRef} className="overflow-y-auto max-h-96">
               {groupedOptions.map(({ category, options }, groupIndex) => (
-                <li key={category || groupIndex}>
+                <div key={category || groupIndex}>
                   {category && showCategories && (
                     <div className="px-4 py-2 text-xs font-semibold text-gray-500 uppercase tracking-wide bg-gray-50 border-b">
                       {category}
@@ -417,7 +417,7 @@ const AdvancedAutocomplete: React.FC<AdvancedAutocompleteProps> = ({
                   {options.map((option, optionIndex) => {
                     const globalIndex = filteredOptions.findIndex(o => o.id === option.id);
                     return (
-                      <li key={option.id}>
+                      <div key={option.id}>
                         <div
                           onClick={() => handleSelect(option)}
                           className="border-b border-gray-100 last:border-b-0"
@@ -427,12 +427,12 @@ const AdvancedAutocomplete: React.FC<AdvancedAutocompleteProps> = ({
                             defaultRenderOption(option, globalIndex === highlightedIndex)
                           }
                         </div>
-                      </li>
+                      </div>
                     );
                   })}
-                </li>
+                </div>
               ))}
-            </ul>
+            </div>
           )}
         </div>
       )}
