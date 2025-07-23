@@ -61,7 +61,7 @@ const highlightMatch = (text: string, query: string): React.ReactNode => {
         {part}
       </mark>
     ) : (
-      part
+      <span key={index}>{part}</span>
     )
   );
 };
