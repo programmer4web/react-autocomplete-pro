@@ -1,6 +1,6 @@
 {
   "name": "react-autocomplete-pro",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Advanced React autocomplete component with fuzzy search, rich results, multi-select, and TypeScript support. Features intelligent suggestions, category grouping, and async data loading.",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
@@ -9,6 +9,10 @@
   "files": [
     "dist"
   ],
+   "funding": {
+    "type": "github",
+    "url": "https://github.com/sponsors/programmer4web"
+  },
   "scripts": {
     "build": "yarn build:css && node node_modules/rollup/dist/bin/rollup -c rollup.config.js",
     "build:css": "npx postcss src/output.css -o dist/index.css --verbose",
