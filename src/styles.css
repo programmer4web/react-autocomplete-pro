@@ -1,7 +1,9 @@
 /* Tailwind input for dist/index.css (built by "build:css").
    Theme variables and the utility classes used in src/ only. Tailwind's global
-   reset (preflight) is left out so the stylesheet doesn't restyle the host page. */
-@layer theme, base, components, utilities;
-@import "tailwindcss/theme.css" layer(theme);
-@import "tailwindcss/utilities.css" layer(utilities) source(none);
+   reset (preflight) is left out so the stylesheet doesn't restyle the host page.
+   Nothing is placed in a cascade layer: host pages often have unlayered resets
+   (e.g. input { padding: 0 }), and unlayered CSS always beats layered CSS, which
+   would override the component's classes. Unlayered, normal specificity applies. */
+@import "tailwindcss/theme.css";
+@import "tailwindcss/utilities.css" source(none);
 @source "./";
