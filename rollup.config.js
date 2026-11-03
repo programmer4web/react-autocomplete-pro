@@ -5,9 +5,9 @@ const terser = require('@rollup/plugin-terser');
 const peerDepsExternal = require('rollup-plugin-peer-deps-external');
 const typescript = require('@rollup/plugin-typescript');
 const json = require('@rollup/plugin-json');
-const importCss = require('rollup-plugin-import-css');
-const copy = require('rollup-plugin-copy');
 const pkg = require('./package.json');
+
+// CSS is built separately by the Tailwind CLI (see "build:css" in package.json)
 
 module.exports = [
   // CommonJS (for Node) and ES module (for bundlers) build
@@ -31,18 +31,6 @@ module.exports = [
       
       // Handle JSON files
       json(),
-      
-      // Handle CSS imports - inlines CSS into JS
-      importCss({
-        minify: true
-      }),
-      
-      // Copy CSS file to dist
-      copy({
-        targets: [
-          { src: 'src/output.css', dest: 'dist', rename: 'index.css' }
-        ]
-      }),
       
       // Resolve node_modules
       resolve({

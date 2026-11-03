@@ -18,10 +18,22 @@ A feature-rich, highly customizable React autocomplete component with advanced s
 ## Installation
 
 ```bash
-npm install react-autocomplete-pro
+npm install react-autocomplete-pro lucide-react
 # or
-yarn add react-autocomplete-pro
+yarn add react-autocomplete-pro lucide-react
 ```
+
+Peer dependencies: `react` and `react-dom` (16.8 or higher) and `lucide-react` (used for the icons).
+
+## Styling
+
+The styles ship as a separate CSS file. Import it once, for example in your app entry or root component:
+
+```javascript
+import 'react-autocomplete-pro/dist/index.css';
+```
+
+The stylesheet contains only the classes the component uses. It doesn't include a global CSS reset, so it won't change the rest of your page.
 
 ## Quick Start
 
@@ -30,6 +42,7 @@ yarn add react-autocomplete-pro
 ```tsx
 import React, { useState } from 'react';
 import { AutocompletePro, AutocompleteOption } from 'react-autocomplete-pro';
+import 'react-autocomplete-pro/dist/index.css';
 
 const options: AutocompleteOption[] = [
   { id: '1', label: 'iPhone 15 Pro', value: 'iphone-15-pro' },
@@ -125,6 +138,11 @@ const handleAsyncSearch = async (query: string): Promise<AutocompleteOption[]> =
 - Firefox 60+
 - Safari 12+
 - Edge 79+
+
+## Changelog
+
+- **1.1.0** - The stylesheet (`dist/index.css`) now contains the component's styles; previous versions shipped an unbuilt Tailwind import, so the component appeared unstyled outside Tailwind projects. Screen reader label on the tag remove button. Build tooling updated.
+- **1.0.8** - Funding link.
 
 ## License
 

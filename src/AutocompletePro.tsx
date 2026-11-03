@@ -112,9 +112,9 @@ const AdvancedAutocomplete: React.FC<AdvancedAutocompleteProps> = ({
   const [isLoading, setIsLoading] = useState(false);
   
   const inputRef = useRef<HTMLInputElement>(null);
-  const listRef = useRef<HTMLUListElement>(null);
+  const listRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
-  const debounceRef = useRef<NodeJS.Timeout>();
+  const debounceRef = useRef<ReturnType<typeof setTimeout>>();
   
   const config = useMemo(() => ({ ...DEFAULT_SEARCH_CONFIG, ...searchConfig }), [searchConfig]);
   
@@ -335,7 +335,7 @@ const AdvancedAutocomplete: React.FC<AdvancedAutocompleteProps> = ({
             )}
           </div>
           {option.description && (
-            <p className="text-sm text-gray-600 truncate">
+            <p className="m-0 text-sm text-gray-600 truncate">
               {highlightMatch(option.description, query)}
             </p>
           )}
@@ -368,8 +368,9 @@ const AdvancedAutocomplete: React.FC<AdvancedAutocompleteProps> = ({
       {option.label}
       <button
         onClick={onRemove}
-        className="ml-2 hover:text-blue-600"
+        className="ml-2 p-0 border-0 bg-transparent text-inherit cursor-pointer inline-flex hover:text-blue-600"
         type="button"
+        aria-label={`Remove ${option.label}`}
       >
         <X className="w-3 h-3" />
       </button>
@@ -391,7 +392,7 @@ const AdvancedAutocomplete: React.FC<AdvancedAutocompleteProps> = ({
             onFocus={() => setIsOpen(true)}
             placeholder={placeholder}
             disabled={disabled}
-            className={`w-full pl-10 pr-10 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-colors ${
+            className={`box-border w-full pl-10 pr-10 py-3 text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-colors ${
               disabled ? 'bg-gray-50 cursor-not-allowed' : 'bg-white'
             }`}
           />

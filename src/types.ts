@@ -31,7 +31,8 @@ export interface AdvancedAutocompleteProps {
   searchConfig?: Partial<SearchConfig>;
   renderOption?: (option: AutocompleteOption, isHighlighted: boolean) => React.ReactNode;
   renderTag?: (option: AutocompleteOption, onRemove: () => void) => React.ReactNode;
-  groupBy?: (option: AutocompleteOption) => string;
+  /** Group name for an option; options without one are grouped under "Other" */
+  groupBy?: (option: AutocompleteOption) => string | undefined;
   filterBy?: string[];
   showCategories?: boolean;
   showRecent?: boolean;
