@@ -143,6 +143,7 @@ const handleAsyncSearch = async (query: string): Promise<AutocompleteOption[]> =
 
 ## Changelog
 
+- **1.1.1** - README: EVAFICY credit and contact links.
 - **1.1.0** - The stylesheet (`dist/index.css`) now contains the component's styles; previous versions shipped an unbuilt Tailwind import, so the component appeared unstyled outside Tailwind projects. Screen reader label on the tag remove button. Build tooling updated.
 - **1.0.8** - Funding link.
 
