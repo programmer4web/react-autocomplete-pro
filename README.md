@@ -2,6 +2,8 @@
 
 [Full Documentation](https://evaficy.com/autocompletepro-advanced-react-autocomplete-component/)
 
+> Built by **[EVAFICY](https://evaficy.com/?utm_source=oss&utm_medium=readme&utm_campaign=react-autocomplete-pro)**, a web development company from Iasi, Romania, with 10+ years building React, TypeScript and Node.js applications. Need a custom component or a full web application? [Contact EVAFICY](https://evaficy.com/contact-evaficy/?utm_source=oss&utm_medium=readme&utm_campaign=react-autocomplete-pro).
+
 A feature-rich, highly customizable React autocomplete component with advanced search capabilities and rich user experiences.
 
 ## Features
@@ -147,3 +149,7 @@ const handleAsyncSearch = async (query: string): Promise<AutocompleteOption[]> =
 ## License
 
 MIT License
+
+---
+
+Made by [EVAFICY](https://evaficy.com/?utm_source=oss&utm_medium=readme&utm_campaign=react-autocomplete-pro): custom React & Node.js development, full-stack applications and AI-powered QA with Evaficy Smart Test. [Get in touch](https://evaficy.com/contact-evaficy/?utm_source=oss&utm_medium=readme&utm_campaign=react-autocomplete-pro).
