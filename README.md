@@ -153,4 +153,6 @@ MIT License
 
 ---
 
-Made by [EVAFICY](https://evaficy.com/?utm_source=oss&utm_medium=readme&utm_campaign=react-autocomplete-pro): custom React & Node.js development, full-stack applications and AI-powered QA with Evaficy Smart Test. [Get in touch](https://evaficy.com/contact-evaficy/?utm_source=oss&utm_medium=readme&utm_campaign=react-autocomplete-pro).
+Made by [EVAFICY](https://evaficy.com/?utm_source=oss&utm_medium=readme&utm_campaign=react-autocomplete-pro): custom React & Node.js development, full-stack applications and AI-powered QA with [Evaficy Smart Test](https://app.evaficy.com/?utm_source=oss&utm_medium=readme&utm_campaign=react-autocomplete-pro). Need a new component or a full project built? [Get in touch](https://evaficy.com/contact-evaficy/?utm_source=oss&utm_medium=readme&utm_campaign=react-autocomplete-pro).
+
+More open-source components: [live demos](https://components.evaficy.com) · [GitHub](https://github.com/programmer4web) · [npm](https://www.npmjs.com/~evaficy)
